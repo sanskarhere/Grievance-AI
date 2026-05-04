@@ -1,0 +1,59 @@
+# --- Dependencies ---
+node_modules/
+jspm_packages/
+venv/
+.venv/
+env/
+target/
+build/
+dist/
+
+# --- Environment Variables & Secrets (CRITICAL) ---
+.env
+.env.local
+.env.development.local
+.env.production.local
+*.secret
+*.key
+*.pem
+
+# --- Database & Storage ---
+*.db
+*.sqlite
+*.sqlite3
+/storage/*.json
+/uploads/
+
+# --- Logs ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# --- IDE & Editor Tools ---
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# --- Coverage & Test Reports ---
+coverage/
+.nyc_output/
+junit.xml
+
+# --- Build Tools ---
+.eslintcache
+.stylelintcache
+
+/src/generated/prisma
+generated/prisma
