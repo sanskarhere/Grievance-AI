@@ -1,16 +1,16 @@
 import { ThemeProvider } from "./components/theme-provider";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router";
-import { LandingPage } from "./pages/landing";
+import { LandingPage } from "./pages/LandingPage";
 import { DashboardLayout } from "./layouts/dashboard-layout";
-import { OfficerOperations } from "./pages/officer-operations";
-import { GovernanceDashboard } from "./pages/governance-dashboard";
-import { IntelligenceCenter } from "./pages/intelligence-center";
-import { RealTimeMonitoring } from "./pages/real-time-monitoring";
-import { SuperAdminPanel } from "./pages/super-admin";
-import { SettingsPage } from "./pages/settings";
-import { ManageCitizens } from "./pages/manage-citizens";
-import { AuthPage } from "./pages/auth";
-import { CitizenDashboard } from "./pages/citizen-dashboard";
+import { OfficerOperations } from "./pages/OfficerOperations";
+import { GovernanceDashboard } from "./pages/GovernanceDashboard";
+import { IntelligenceCenter } from "./pages/IntelligenceCenter";
+import { RealTimeMonitoring } from "./pages/RealTimeMonitoring";
+import { SuperAdminPanel } from "./pages/SuperAdminPanel";
+import { SettingsPage } from "./pages/SettingsPage";
+import { ManageCitizens } from "./pages/ManageCitizens";
+import { AuthPage } from "./pages/AuthPage";
+import { CitizenDashboard } from "./pages/CitizenDashboard";
 import { ComplaintPage } from "./pages/ComplaintPage";
 
 export default function App() {
@@ -20,7 +20,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/auth" element={<AuthPage />} />
-          <Route path="/citizen-dashboard" element={<CitizenDashboard />} />
+          <Route path="/citizen-dashboard" element={<CitizenDashboard />}>
+            <Route path="complaint/:id" element={<ComplaintPage />} />
+          </Route>
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<Navigate to="operations" replace />} />
             <Route path="operations" element={<OfficerOperations />} />
@@ -30,7 +32,6 @@ export default function App() {
             <Route path="monitoring" element={<RealTimeMonitoring />} />
             <Route path="admin" element={<SuperAdminPanel />} />
             <Route path="settings" element={<SettingsPage />} />
-            <Route path="complaint" element={<ComplaintPage />} />
             {/* Add other dashboard routes here as they are created */}
           </Route>
         </Routes>
