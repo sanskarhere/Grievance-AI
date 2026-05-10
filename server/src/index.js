@@ -1,8 +1,7 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import { connectDB } from './config/db.js';
-
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import { connectDB } from "./config/db.js";
 
 dotenv.config();
 const app = express();
@@ -15,19 +14,23 @@ app.use(
     cors({
         origin: "*",
         methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true
-    })
+        credentials: true,
+    }),
 );
 
-
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
+// Test route to verify DB connection
+app.get("/health", async (req, res) => {
+    try {
+        const result = await sql`SELECT version()`;
+        res.json({ status: "ok", db: result[0].version });
+    } catch (error) {
+        console.error("DB Connection Error:", error);
+        res.status(500).json({ error: "Database connection failed" });
+    }
 });
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/complaints", complaintRoutes);
-
-
 
 app.listen(process.env.PORT || 5000, () => {
     console.log(`Server is running on port ${process.env.PORT || 5000}`);

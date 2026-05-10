@@ -11,6 +11,7 @@ import { SettingsPage } from "./pages/settings";
 import { ManageCitizens } from "./pages/manage-citizens";
 import { AuthPage } from "./pages/auth";
 import { CitizenDashboard } from "./pages/citizen-dashboard";
+import { ComplaintPage } from "./pages/ComplaintPage";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="monitoring" element={<RealTimeMonitoring />} />
             <Route path="admin" element={<SuperAdminPanel />} />
             <Route path="settings" element={<SettingsPage />} />
+            <Route path="complaint" element={<ComplaintPage />} />
             {/* Add other dashboard routes here as they are created */}
           </Route>
         </Routes>

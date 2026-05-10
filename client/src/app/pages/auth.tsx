@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Shield, Mail, Lock, User, Building, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Shield, Mail, Lock, User, Building, ArrowRight } from "lucide-react";
 import { Button } from "../components/ui/button";
 
 export function AuthPage() {
