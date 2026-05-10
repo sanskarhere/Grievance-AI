@@ -1,7 +1,31 @@
 import React from "react";
+import { Navbar } from "../components/landingpage/navbar";
+import { Footer } from "../components/landingpage/footer";
+import { HeroSection } from "../components/landingpage/hero-section";
+import { ComplaintSubmission } from "../components/landingpage/complaint-submission";
+import { AIPipeline } from "../components/landingpage/ai-pipeline";
+import { DashboardPreview } from "../components/landingpage/dashboard-preview";
+import { OfficerWorkflow } from "../components/landingpage/officer-workflow";
+import { TrustTransparency } from "../components/landingpage/trust-transparency";
 
 const LandingPage = () => {
-    return <div className="text-center bg-gray-900 text-white p-8">LandingPage</div>;
+    return (
+    
+    <div className="text-center bg-gray-900 text-white p-8">
+
+    <Navbar/>
+    <HeroSection/>
+    <ComplaintSubmission/>
+    <AIPipeline/>
+    <DashboardPreview/>
+    <OfficerWorkflow/>
+    <TrustTransparency/>
+
+    <Footer/>
+    
+     </div>
+
+    );
 };
 
 export default LandingPage;
