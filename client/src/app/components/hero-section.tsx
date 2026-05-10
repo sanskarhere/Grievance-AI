@@ -154,9 +154,9 @@ export function HeroSection() {
           <div className="absolute top-10 -left-10 hidden xl:block">
             <motion.div
               animate={{
-                y: [0, -10, 0],
+                y: [0, -15, 0],
               }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="w-56 p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg"
             >
               <div className="flex items-center gap-2 mb-3">
@@ -178,9 +178,9 @@ export function HeroSection() {
           <div className="absolute bottom-10 -right-10 hidden xl:block">
             <motion.div
               animate={{
-                y: [0, 10, 0],
+                y: [0, -15, 0],
               }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="w-56 p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg"
             >
               <div className="flex items-center gap-2 mb-3">

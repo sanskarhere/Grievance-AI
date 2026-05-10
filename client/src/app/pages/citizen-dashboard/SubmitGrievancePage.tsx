@@ -465,7 +465,7 @@ export function SubmitGrievance() {
                     >
                         {step === 3 ? (
                             <>
-                                Sign & Submit <Send className="w-4 h-4 ml-2" />
+                                Submit Complaint <Send className="w-4 h-4 ml-2" />
                             </>
                         ) : (
                             "Proceed to Next Section"
