@@ -187,7 +187,7 @@ export function AuthPage() {
                       });
                       const data = await res.json();
                       if (data.success) {
-                        window.location.href = role === "citizen" ? "/citizen-dashboard" : "/dashboard";
+                        window.location.href = role === "citizen" ? "/citizen-dashboard" : "/officer-dashboard";
                       } else {
                         setError(data.error || "Failed to register");
                       }
@@ -199,7 +199,7 @@ export function AuthPage() {
                     // Mock login success
                     setLoading(true);
                     setTimeout(() => {
-                      window.location.href = role === "citizen" ? "/citizen-dashboard" : "/dashboard";
+                      window.location.href = role === "citizen" ? "/citizen-dashboard" : "/officer-dashboard";
                     }, 1000);
                   }
                 }}

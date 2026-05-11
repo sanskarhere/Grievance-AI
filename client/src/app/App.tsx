@@ -36,7 +36,7 @@ export default function App() {
             <Route path="contact" element={<CitizenContact />} />
             <Route path="profile" element={<CitizenProfile />} />
           </Route>
-          <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route path="/admin-dashboard" element={<DashboardLayout />}>
             <Route index element={<Navigate to="operations" replace />} />
             <Route path="operations" element={<OfficerOperations />} />
             <Route path="governance" element={<GovernanceDashboard />} />
@@ -46,6 +46,10 @@ export default function App() {
             <Route path="admin" element={<SuperAdminPanel />} />
             <Route path="settings" element={<SettingsPage />} />
             {/* Add other dashboard routes here as they are created */}
+          </Route>
+          <Route path="/officer-dashboard" element={<DashboardLayout />}>
+            <Route index element={<Navigate to="operations" replace />} />
+            <Route path="operations" element={<OfficerOperations />} />
           </Route>
         </Routes>
       </BrowserRouter>
