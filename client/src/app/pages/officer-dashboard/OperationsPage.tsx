@@ -9,7 +9,18 @@ import { GlassCard } from "../../components/shared/glass-card";
 import { useRealtimeComplaints } from "../../hooks/useRealtimeComplaints";
 
 export function OfficerOperations() {
-  const { complaints, kpis, activity, aiSuggestions, lastUpdated } =
+  const {
+    complaints,
+    kpis,
+    activity,
+    aiSuggestions,
+    lastUpdated,
+    assignComplaint,
+    startComplaint,
+    resolveComplaint,
+    activeComplaintId,
+    isUpdating,
+  } =
     useRealtimeComplaints();
 
   return (
@@ -50,7 +61,14 @@ export function OfficerOperations() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
-        <ComplaintQueue complaints={complaints} />
+        <ComplaintQueue
+          complaints={complaints}
+          onAssign={assignComplaint}
+          onStart={startComplaint}
+          onResolve={resolveComplaint}
+          activeComplaintId={activeComplaintId}
+          isUpdating={isUpdating}
+        />
         <div className="space-y-6">
           <AICopilotPanel suggestions={aiSuggestions} />
           <GlassCard className="p-5">

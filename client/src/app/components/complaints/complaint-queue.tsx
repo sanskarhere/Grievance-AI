@@ -20,6 +20,8 @@ const statusStyles: Record<string, string> = {
   "In Progress": "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-200",
   Escalated: "bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-200",
   Resolved: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-200",
+  Closed: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-200",
+  Rejected: "bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-200",
 };
 
 const priorityStyles: Record<string, string> = {
@@ -31,9 +33,21 @@ const priorityStyles: Record<string, string> = {
 
 interface ComplaintQueueProps {
   complaints: ComplaintItem[];
+  onAssign?: (complaintId: string) => void;
+  onStart?: (complaintId: string) => void;
+  onResolve?: (complaintId: string) => void;
+  activeComplaintId?: string | null;
+  isUpdating?: boolean;
 }
 
-export function ComplaintQueue({ complaints }: ComplaintQueueProps) {
+export function ComplaintQueue({
+  complaints,
+  onAssign,
+  onStart,
+  onResolve,
+  activeComplaintId,
+  isUpdating,
+}: ComplaintQueueProps) {
   const [query, setQuery] = useState("");
   const [expanded, setExpanded] = useState<string | null>(complaints[0]?.id ?? null);
   const [filter, setFilter] = useState("All");
@@ -104,6 +118,11 @@ export function ComplaintQueue({ complaints }: ComplaintQueueProps) {
       <div className="space-y-3">
         {filtered.map((item) => {
           const isExpanded = expanded === item.id;
+          const isPending = activeComplaintId === item.id && isUpdating;
+          const canAssign = ["New", "Triaged"].includes(item.status);
+          const canStart = ["Assigned"].includes(item.status);
+          const canResolve = ["In Progress"].includes(item.status);
+          const isDone = ["Resolved", "Closed"].includes(item.status);
           return (
             <div
               key={item.id}
@@ -146,15 +165,42 @@ export function ComplaintQueue({ complaints }: ComplaintQueueProps) {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <Button size="sm" className="bg-cyan-600 hover:bg-cyan-500 text-white">
-                    Assign
-                  </Button>
-                  <Button size="sm" variant="outline" className="bg-white/70 dark:bg-slate-900/60">
-                    Escalate
-                  </Button>
-                  <Button size="sm" variant="outline" className="bg-white/70 dark:bg-slate-900/60">
-                    Resolve
-                  </Button>
+                  {canAssign && (
+                    <Button
+                      size="sm"
+                      className="bg-cyan-600 hover:bg-cyan-500 text-white"
+                      disabled={isPending}
+                      onClick={() => onAssign?.(item.id)}
+                    >
+                      {isPending ? "Assigning..." : "Assign to Me"}
+                    </Button>
+                  )}
+                  {canStart && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="bg-white/70 dark:bg-slate-900/60"
+                      disabled={isPending}
+                      onClick={() => onStart?.(item.id)}
+                    >
+                      {isPending ? "Starting..." : "Start Work"}
+                    </Button>
+                  )}
+                  {canResolve && (
+                    <Button
+                      size="sm"
+                      className="bg-emerald-600 hover:bg-emerald-500 text-white"
+                      disabled={isPending}
+                      onClick={() => onResolve?.(item.id)}
+                    >
+                      {isPending ? "Completing..." : "Mark Done"}
+                    </Button>
+                  )}
+                  {isDone && (
+                    <Badge variant="secondary" className="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-200">
+                      Work Complete
+                    </Badge>
+                  )}
                   <Button size="icon" variant="ghost" className="text-slate-400">
                     <MoreVertical className="h-4 w-4" />
                   </Button>

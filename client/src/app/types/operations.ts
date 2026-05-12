@@ -7,7 +7,9 @@ export type ComplaintStatus =
     | "Assigned"
     | "In Progress"
     | "Escalated"
-    | "Resolved";
+    | "Resolved"
+    | "Closed"
+    | "Rejected";
 
 export interface KPIStat {
     id: string;
