@@ -10,6 +10,7 @@
     "test": "node --test",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
+    "build": "npm install && npm audit fix",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
