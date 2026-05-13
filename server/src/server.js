@@ -1,8 +1,8 @@
+import 'dotenv/config';
 import express from 'express';
 import http from 'http';
 import cors from 'cors';
 import helmet from 'helmet';
-import dotenv from 'dotenv';
 import morgan from 'morgan';
 import authRoutes from './modules/auth/auth.routes.js';
 import complaintRoutes from './modules/complaints/complaint.routes.js';
@@ -19,8 +19,6 @@ import { prisma } from './prisma/client.js';
 import { errorMiddleware, notFoundHandler } from './middleware/error.middleware.js';
 import { requestLogger } from './middleware/requestLogger.js';
 import { initializeRealtime } from './services/realtime.service.js';
-
-dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -93,7 +91,7 @@ app.use(notFoundHandler);
 app.use(errorMiddleware);
 
 const httpServer = http.createServer(app);
-initializeRealtime(httpServer, allowedOrigin);
+initializeRealtime(httpServer, allowedOrigins);
 
 const server = httpServer.listen(port, () => {
   console.log(`Server running on port ${port}`);
