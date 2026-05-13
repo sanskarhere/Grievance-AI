@@ -21,12 +21,30 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5000;
-const allowedOrigin = process.env.CLIENT_ORIGIN || 'http://localhost:5173';
+const normalizeOrigin = (origin = '') => origin.trim().replace(/\/+$/, '');
+const parseOrigins = (origins = '') =>
+  origins
+    .split(',')
+    .map(normalizeOrigin)
+    .filter(Boolean);
+
+const allowedOrigins = new Set([
+  'http://localhost:5173',
+  'https://grievance-io.vercel.app',
+  ...parseOrigins(process.env.CLIENT_ORIGIN),
+  ...parseOrigins(process.env.CLIENT_ORIGINS),
+]);
 
 app.use(helmet());
 app.use(
   cors({
-    origin: allowedOrigin,
+    origin(origin, callback) {
+      if (!origin || allowedOrigins.has(normalizeOrigin(origin))) {
+        return callback(null, true);
+      }
+
+      return callback(new Error(`Origin ${origin} is not allowed by CORS`));
+    },
     credentials: true,
   }),
 );
