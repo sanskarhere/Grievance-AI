@@ -1,4 +1,4 @@
-# 🛡️ Grievance.ai — Smart Public Governance & AI Dispatch Platform
+# Grievance.ai — Smart Public Governance & AI Dispatch Platform
 
 [![Neon Auth](https://img.shields.io/badge/Identity-Neon%20Auth%20OIDC-blueviolet?style=for-the-badge)](https://neon.tech/docs/guides/auth)
 [![Google Cloud Run](https://img.shields.io/badge/Deployment-Cloud%20Run-blue?style=for-the-badge)](https://cloud.google.com/run)
@@ -9,59 +9,59 @@ Grievance.ai is a state-of-the-art, secure, and fully automated public administr
 
 ---
 
-## 🌐 Live Deployments
+## Live Deployments
 
 Experience the live, production-grade deployment of the platform:
 
 | Component | Service Platform | Live Endpoint URL |
 | :--- | :--- | :--- |
-| **Frontend Web Application** | Google Firebase Hosting | 🔗 [https://grievance-ai-ui.web.app](https://grievance-ai-ui.web.app) |
-| **Backend API Engine** | Google Cloud Run (Containerized) | 🔗 [https://grievance-server-200448172587.us-central1.run.app](https://grievance-server-200448172587.us-central1.run.app) |
+| **Frontend Web Application** | Google Firebase Hosting | [https://grievance-ai-ui.web.app](https://grievance-ai-ui.web.app) |
+| **Backend API Engine** | Google Cloud Run (Containerized) | [https://grievance-server-200448172587.us-central1.run.app](https://grievance-server-200448172587.us-central1.run.app) |
 
 ---
 
-## 🎨 System Architecture & Features
+## System Architecture & Features
 
 Grievance.ai transitions city management away from slow manual filing by offering three highly specialized web portals secured with **Neon Auth's OpenID Connect (OIDC)** identity system:
 
-### 1. 👥 The Citizen Hub
+### 1. The Citizen Hub
 * **AI-Guided Submission:** File civic issues with automatic department auto-tagging, severity assessment, and title optimization.
 * **Global Leaderboards:** Engagement metrics celebrating citizens who contribute actively to community resolutions.
 * **Community Portals:** Interactive maps and live boards detailing localized complaints and ongoing infrastructure operations.
 
-### 2. 👮 The Officer Workspace
+### 2. The Officer Workspace
 * **AI Intelligence Center:** Interactive natural language workspaces equipped with automated summarizers, routing recommendations, and dispatch triggers.
 * **Operational Queue:** Dynamic Kanban boards with real-time status syncing via Socket.io channels.
 * **Leaderboards & Auditing:** Metrics assessing departmental turnaround times, accuracy, and case closure efficiency.
 
-### 3. 👑 The Admin Command Center
+### 3. The Admin Command Center
 * **Operational Dashboards:** Premium charts and real-time telemetry analyzing total complaints, resolution rates, and departmental load metrics.
 * **Citizen Management:** Advanced table operations for citizen roles, verification overrides, and identity auditing.
 * **System Settings:** Centralized toggle boards managing regional routing rules, notification triggers, and API integrations.
 
 ---
 
-## 🧠 Behind the Scenes: Asymmetric AI Orchestration
+## Behind the Scenes: Asymmetric AI Orchestration
 * **Secure JWT Middleware:** Performs high-speed cryptographic signature verification natively against Neon's **Ed25519 (EdDSA)** OIDC elliptic curve key sets (JWKS).
 * **Automatic Database Synchronizer:** Features a self-healing user onboarding engine that translates OIDC session claims directly into Postgres relational records on-the-fly.
 * **FastAPI Model Spaces:** Connects municipal dispatchers to distributed classification layers hosted on Hugging Face Spaces for offloaded, high-throughput text analytics.
 
 ---
 
-## 👥 Contributors
+## Contributors
 
 Honoring the engineering minds behind the architecture, implementation, and deployment of Grievance.ai:
 
 | Contributor | Specialized Role | Primary Contributions |
 | :--- | :--- | :--- |
-| **Musa Qureshi** | 👑 Lead Full-Stack Architect | Designed the multi-tier dashboard routing systems, Prisma schemas, and oversaw Cloud Run deployment. |
-| **Antigravity AI** | 🤖 Core Pair Programming Agent | Engineered the Ed25519 cryptographic OIDC verification engine, automated user sync pipelines, and optimized build setups. |
-| **DeepMind Agentic Team** | 🚀 Advanced Coding Frameworks | Provided the high-performance autonomous agent workspace enabling rapid pair programming cycles. |
-| **Neon Auth Team** | 🔑 Identity & Database Infrastructure | Powering the secure multi-provider Google OAuth, email OTP systems, and distributed PostgreSQL infrastructure. |
-| **FastAPI Model Services** | 🧠 ML Classification Pipelines | Exposing the machine learning classification engines that automatically parse and route incoming municipal complaints. |
+| **Musa Qureshi** | Lead Full-Stack Architect | Designed the multi-tier dashboard routing systems, Prisma schemas, and oversaw Cloud Run deployment. |
+| **Antigravity AI** | Core Pair Programming Agent | Engineered the Ed25519 cryptographic OIDC verification engine, automated user sync pipelines, and optimized build setups. |
+| **DeepMind Agentic Team** | Advanced Coding Frameworks | Provided the high-performance autonomous agent workspace enabling rapid pair programming cycles. |
+| **Neon Auth Team** | Identity & Database Infrastructure | Powering the secure multi-provider Google OAuth, email OTP systems, and distributed PostgreSQL infrastructure. |
+| **FastAPI Model Services** | ML Classification Pipelines | Exposing the machine learning classification engines that automatically parse and route incoming municipal complaints. |
 
 ---
 
 <p align="center">
-  🛡️ <i>Securing, Automating, and Modernizing Civic Governance</i>
+  <i>Securing, Automating, and Modernizing Civic Governance</i>
 </p>
