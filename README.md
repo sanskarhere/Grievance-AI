@@ -54,11 +54,11 @@ Honoring the engineering minds behind the architecture, implementation, and depl
 
 | Contributor | Specialized Role | Primary Contributions |
 | :--- | :--- | :--- |
-| **Musa Qureshi** | Lead Full-Stack Architect | Designed the multi-tier dashboard routing systems, Prisma schemas, and oversaw Cloud Run deployment. |
-| **Antigravity AI** | Core Pair Programming Agent | Engineered the Ed25519 cryptographic OIDC verification engine, automated user sync pipelines, and optimized build setups. |
-| **DeepMind Agentic Team** | Advanced Coding Frameworks | Provided the high-performance autonomous agent workspace enabling rapid pair programming cycles. |
-| **Neon Auth Team** | Identity & Database Infrastructure | Powering the secure multi-provider Google OAuth, email OTP systems, and distributed PostgreSQL infrastructure. |
-| **FastAPI Model Services** | ML Classification Pipelines | Exposing the machine learning classification engines that automatically parse and route incoming municipal complaints. |
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
 
 ---
 
