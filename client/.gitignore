@@ -13,6 +13,15 @@ dist-ssr/
 .env.test.local
 .env.production.local
 
+# Firebase
+.firebase/
+
+# AI Agent / Genkit files
+.agents/
+skills-lock.json
+SKILL.md
+genkit_*.md
+
 # Logs and test results
 *.log
 coverage/

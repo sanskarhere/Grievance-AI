@@ -126,3 +126,13 @@ __pycache__/
 *.pb
 *.h5
 Models/
+
+# Firebase
+.firebase/
+
+# AI Agent / Genkit files
+.agents/
+skills-lock.json
+SKILL.md
+genkit_*.md
+
